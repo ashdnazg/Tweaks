@@ -66,6 +66,7 @@
 @synthesize name = _name;
 @synthesize identifier = _identifier;
 @synthesize currentValue = _currentValue;
+@synthesize isEnabled = _isEnabled;
 
 - (instancetype)initWithIdentifier:(NSString *)identifier name:(NSString *)name
                              block:(dispatch_block_t)block {
@@ -73,6 +74,7 @@
     _identifier = identifier;
     _name = name;
     _currentValue = block;
+    _isEnabled = YES;
   }
   return self;
 }

@@ -86,6 +86,12 @@ typedef id FBTweakValue;
  */
 @property (readonly ,nonatomic) dispatch_block_t currentValue;
 
+/**
+ @abstract \c YES if the tweak is enabled, \c NO otherwise. Default is \c YES. If \c NO, the
+ \c currentValue will not be called.
+ */
+@property (readwrite ,nonatomic) BOOL isEnabled;
+
 @end
 
 /**
@@ -172,7 +178,8 @@ typedef id FBTweakValue;
 
 /**
  @abstract Initializes with \c identifier, \c name and \c block as the underlying block.
- The \c currentValue property of the tweak is set to be the \c block.
+ The \c currentValue property of the tweak is set to be the \c block and \c isEnabled is set to
+ \c YES.
  */
 - (instancetype)initWithIdentifier:(NSString *)identifier name:(NSString *)name
                              block:(dispatch_block_t)block NS_DESIGNATED_INITIALIZER;
